@@ -41,8 +41,7 @@ function displayLibrary(){
         const newBookCard = document.createElement('div');
         newBookCard.dataset.key = `index-${i}`;
         newBookCard.textContent = book.info();
-        newBookCard.style.cssText = "display: flex; flex-direction: row; align-items: center;";
-
+        newBookCard.classList = 'card';
         
         // add remove button to the card
         const removeBookButton = document.createElement('div');
@@ -68,6 +67,9 @@ function removeBook(e){
 
 // Function that generateS the input fields for the new book
 function generateForm(){
+    // Display the form a single time
+    if(document.querySelector('.user-input')) return;
+
     // create title field
     const titleField = document.createElement('input');
     titleField.type = 'text';
